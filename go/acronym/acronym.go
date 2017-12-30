@@ -5,11 +5,21 @@
 // https://golang.org/doc/effective_go.html#commentary
 package acronym
 
+import "strings"
+import "unicode"
+
 // Abbreviate should have a comment documenting it.
 func Abbreviate(s string) string {
-	// Write some code here to pass the test suite.
-	// Then remove all the stock comments.
-	// They're here to help you get started but they only clutter a finished solution.
-	// If you leave them in, reviewers may protest!
-	return ""
+
+    f := func(c rune) bool {
+		return unicode.IsSpace(c) || (c=='-')
+	}
+
+    words := strings.FieldsFunc(s,f)
+
+    var retval string
+    for _, value := range words {    
+       retval += strings.ToUpper(string(value[0]))
+   }
+    return retval
 }
