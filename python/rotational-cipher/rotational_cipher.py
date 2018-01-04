@@ -1,25 +1,14 @@
-def f(c,key):
-    cint = ord(c)
-
-    if(cint < 65):
-        pass
-    elif (cint > 122):
-        pass
-    elif (cint > 90 and cint < 97):
-        pass
-    else:
-        if (cint >= 97):
-            cint = cint + key
-            if(cint > 122):
-                cint -= 26
-        else:
-            cint = cint + key
-            if(cint > 90):
-                cint -= 26
-
-    return chr(cint)
-
-
-
 def rotate(text, key):
-    return "".join(f(c,key) for c in text)
+    rotated = ""
+    for i in text:
+        if str(i).isupper():
+            number = (ord(i) - 65 + key) % 26
+            rotated += chr(number + 65)
+        elif str(i).islower():
+            number = (ord(i) - 97 + key) % 26
+            rotated += chr(number + 97)
+        else:
+            rotated += i
+
+    return rotated
+
