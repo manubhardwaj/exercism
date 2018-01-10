@@ -1,8 +1,4 @@
-
-NUMBERS = {
-        1: 'one',
-        2
-        }
+import clformat
 
 def say(number):
-
+    return clformat('~r', number)
