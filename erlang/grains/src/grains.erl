@@ -2,10 +2,8 @@
 
 -export([square/1, total/0, test_version/0]).
 
-square(N) ->
-  undefined.
+square(N) -> trunc(math:pow(2,N-1)).
 
-total() ->
-  undefined.
+total() -> square(65) - 1.
 
 test_version() -> 1.
