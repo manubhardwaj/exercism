@@ -1,0 +1,6 @@
+/home/health/1
+/home/health/2/3
+/drugs/A/B
+/drugs/C
+/drugs/A/E
+/home/health/4
